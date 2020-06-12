@@ -18,7 +18,8 @@ const ContactForm = () => {
           <input
             name="firstName"
             placeholder="Edd"
-            ref={register({ required: true, maxLength: 7 })}
+            data-testid="firstname"
+            ref={register({ required: true, maxLength: 20 })}
           />
           {errors.firstName && (
             <p>Looks like there was an error: {errors.firstName.type}</p>
@@ -30,6 +31,7 @@ const ContactForm = () => {
           <input
             name="lastName"
             placeholder="Burke"
+            data-testid="lastname"
             ref={register({ required: true })}
           />
           {errors.lastName && (
@@ -56,7 +58,7 @@ const ContactForm = () => {
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
-        <input data-testid="test" type="submit" />
+        <input data-testid="submit" role="submit" type="submit" />
       </form>
     </div>
   );
